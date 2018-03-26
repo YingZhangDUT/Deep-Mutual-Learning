@@ -1,15 +1,25 @@
 #!/bin/bash
 #
-# Where the dataset is saved to.
-DATASET_DIR=/home/zhangying/Documents/Dataset/TFRecords/market1501
+# This script performs the following operations:
+# Evaluate the MobileNet trained independently on Market-1501
+#
+# Usage:
+# cd Deep-Mutual-Learning
+# ./scripts/evaluate_ind_mobilenet_on_market.sh
 
-# Where the checkpoint and logs saved to.
+
+# Where the TFRecords are saved to.
+DATASET_DIR=/path/to/market-1501/tfrecords
+
+# Where the checkpoints are saved to.
 DATASET_NAME=market1501
 SAVE_NAME=market1501_ind_mobilenet
 CKPT_DIR=${SAVE_NAME}/checkpoint
-LOG_DIR=${SAVE_NAME}/logs
+
+# Where the results will be saved to.
 RESULT_DIR=${SAVE_NAME}/results
 
+# Model setting
 MODEL_NAME=mobilenet_v1
 
 # Run evaluation.

@@ -1,3 +1,7 @@
+"""
+    Contains utilities for general usage.
+"""
+
 import os
 import os.path as osp
 import json

@@ -1,14 +1,17 @@
-"""Convert Market-1501 to TFRecords of TF-Example protos.
+"""
+    Convert Market-1501 to TFRecords of TF-Example protos.
 """
 from __future__ import absolute_import
 from __future__ import division
 from __future__ import print_function
 
 import tensorflow as tf
+import os
+import sys
 from scipy import misc
 from datasets.dataset_utils import *
 
-# resize all the reid images into the same size
+# resize all the re-id images into the same size
 _IMAGE_HEIGHT = 160
 _IMAGE_WIDTH = 64
 _IMAGE_CHANNELS = 3

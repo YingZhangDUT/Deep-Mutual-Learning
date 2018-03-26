@@ -1,4 +1,5 @@
-"""Make a list for image files. This provides guidance for checking the data preparation.
+"""
+    Make a list for image files. This provides guidance for checking the data preparation.
 """
 import numpy as np
 from glob import glob

@@ -1,4 +1,9 @@
-"""Format Market-1501 training images with consecutive labels.
+"""
+   Format Market-1501 training images with consecutive labels.
+
+   This code modifies the data preparation method of
+   "Learning Deep Feature Representations with Domain Guided Dropout for Person Re-identification".
+
 """
 
 import shutil

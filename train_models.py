@@ -1,18 +1,6 @@
-# Copyright 2016 The TensorFlow Authors. All Rights Reserved.
-#
-# Licensed under the Apache License, Version 2.0 (the "License");
-# you may not use this file except in compliance with the License.
-# You may obtain a copy of the License at
-#
-# http://www.apache.org/licenses/LICENSE-2.0
-#
-# Unless required by applicable law or agreed to in writing, software
-# distributed under the License is distributed on an "AS IS" BASIS,
-# WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
-# See the License for the specific language governing permissions and
-# limitations under the License.
-# ==============================================================================
-"""Generic training script that trains a model using a given dataset."""
+"""
+    Generic training script that trains a model using a given dataset.
+"""
 
 from __future__ import absolute_import
 from __future__ import division
@@ -69,18 +57,11 @@ def _average_gradients(tower_grads, catname=None):
     return average_grads
 
 
-def softmax_with_temperature(logits, t=1.0):
-    """ softmax with temperature
-    """
-    predictions = tf.divide(tf.exp(logits / t), tf.reduce_sum(tf.exp(logits / t), axis=-1, keep_dims=True))
-    return predictions
-
-
 def kl_loss_compute(logits1, logits2):
     """ KL loss
     """
-    pred1 = softmax_with_temperature(logits1, t=FLAGS.temperature)
-    pred2 = softmax_with_temperature(logits2, t=FLAGS.temperature)
+    pred1 = tf.nn.softmax(logits1)
+    pred2 = tf.nn.softmax(logits2)
     loss = tf.reduce_mean(tf.reduce_sum(pred2 * tf.log(1e-8 + pred2 / (pred1 + 1e-8)), 1))
 
     return loss

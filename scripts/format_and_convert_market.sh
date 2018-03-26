@@ -1,8 +1,19 @@
 #!/bin/bash
+#
+# This script performs the following operations:
+# 1. Format the Market-1501 training images with consecutive labels.
+# 2. Convert the Market-1501 images into TFRecords.
+#
+# Usage:
+# cd Deep-Mutual-Learning
+# ./scripts/format_and_convert_market.sh
 
 
-IMAGE_DIR=/home/zhangying/Documents/Dataset/Images/Market-1501
-TF_DIR=/home/zhangying/Documents/Dataset/TFRecords/market1501
+# Where the Market-1501 images are saved to.
+IMAGE_DIR=/path/to/Market-1501/images
+
+# Where the TFRecord data will be saved to.
+TF_DIR=/path/to/market-1501/tfrecords
 
 
 echo "Building the TFRecords of market1501..."
