@@ -4,7 +4,7 @@ TensorFlow implementation of **[Deep Mutual Learning](https://drive.google.com/f
 
 
 ## Introduction
-Deep mutual learning provides a simple but effective way to improve the generalisation ability of a network by training collaboratively with a cohort of other networks.
+Deep mutual learning provides a simple but effective way to improve the generalisation ability of a network by training collaboratively with a cohort of other networks. 
 
 ![DML](DML.png "Deep Mutual Learning")
 
